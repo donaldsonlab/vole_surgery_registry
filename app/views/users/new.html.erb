@@ -1,6 +1,69 @@
-<section class='register'>
+<style>
+  .register-page{
+    background: #808782;
+  }
 
-  <div class="form">
+  .register-box{
+	background: #f9f9f9;
+	border-radius: 25px;
+	color: #272727;
+	display: flex;
+	flex-direction: column;
+	width: 25%;
+	height: 900px;
+	margin: auto;
+	text-align: center;	
+	justify-content: center;
+	margin-top: 10rem;
+	font-family:Calibri;
+  }
+
+  .label-input{
+	  padding-top: 2rem;
+	  font-size: 1.5rem;
+  }
+
+  .back{
+	  color: #454545;
+	  text-decoration: none;
+  }
+
+  .back:hover{
+	  color: #C05746; 
+  }
+
+  .reg-button{
+    border-radius: 25px;
+    width:150px;
+    height:40px;
+    color:#f9f9f9;
+    background:#454545;
+    border: 2px solid #f9f9f9;
+    font-size: 1.2rem;
+    }
+  
+    .reg-button:hover{
+      background: #272727;
+    }
+  
+    .input-box{
+      padding: .5rem;
+      width: 70%;
+      border: 2px solid #808782;
+      text-align: left;
+      font-size: 1rem;
+      margin-top: .5rem;
+      }
+  
+    .input-box:focus{
+    border: 2px solid #272727;
+    outline: none;
+    }
+
+</style>
+
+<body class="register-page">
+	<div class="register-box">
     <h1>Register Account</h1>
     <% if @user.errors %>
       <ul id="errors">
@@ -14,40 +77,37 @@
     <div class="label-input">
       <%= f.label :name %>
       <br>
-      <%= f.text_field :name, required: true %>
+      <%= f.text_field :name, required: true, class: "input-box" %>
     </div>
     <div class="label-input">
       <%= f.label :location %>
       <br>
-      <%= f.text_field :location, required: true %>
+      <%= f.text_field :location, required: true, class: "input-box" %>
     </div>
     <div class="label-input">
       <%= f.label :state %>
       <br>
-      <%= f.text_field :state, required: true %>
+      <%= f.text_field :state, required: true, class: "input-box" %>
     </div>
     <div class="label-input">
       <%= f.label :email %>
       <br>
-      <%= f.text_field :email, required: true %>
+      <%= f.text_field :email, required: true, class: "input-box" %>
     </div>
     <div class="label-input">
       <%= f.label :password %>
       <br>
-      <%= f.password_field :password, required: true %>
+      <%= f.password_field :password, required: true, class: "input-box" %>
     </div>
     <div class="label-input">
       <%= f.label :password_confirmation %>
       <br>
-      <%= f.password_field :password_confirmation, required: true %>
+      <%= f.password_field :password_confirmation, required: true, class: "input-box" %>
     </div>
-    <br>
-    <br>
     <div class="label-input">
-      <%= f.submit %>
+      <%= f.submit(:class => "reg-button") %>
     </div>
-    <br>
     <% end %>
+    <h3><%= link_to "Back", login_path, {:class => "back"} %></h3>
   </div>
-
 </section>

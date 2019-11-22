@@ -1,32 +1,107 @@
-<section class="login-page">
+<style>
+  .login-page{
+	margin: 0;
+    width: 100%;
+    height: 100vh;
+    font-family: "Exo", sans-serif;
+    color: #fff;
+    background: linear-gradient(-45deg,  #2B303A, #426D7D, #575C55, #4C4C47, #2D2620, #EA8B3C, #E07D2C);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+  }
 
-  <h1>Welcome to the Vole Surgery Registry</h1>
+  .login-box{
+	background: #f9f9f9;
+	border-radius: 25px;
+	color: #272727;
+	display: flex;
+	flex-direction: column;
+	width: 25%;
+	height: 500px;
+	margin: auto;
+	text-align: center;	
+	justify-content: center;
+	margin-top: 10rem;
+	font-family:Calibri;
+  }
 
-  <container class='login'>
-      <div class="login-form">
-        <h1>Please Log In</h1>
-        <%= form_tag login_path do %>
-          <div class="label-input">
-            <%= label_tag :email %>
-            <br>
-            <%= text_field_tag :email, nil, required: true %>
-          </div>
-          <div class="label-input">
-            <%= label_tag :password %>
-            <br>
-            <%= password_field_tag :password, nil, required: true %>
-          </div>
-          <br>
-          <div class="label-input">
-            <%= submit_tag "Log In" %>
-          </div>
-          <br>
-        <% end %>
+  .label-input{
+	  padding-top: 2rem;
+	  font-size: 1.5rem;
+  }
 
-        <nav class='link'>
-          <h5>New? Please <%= link_to "Register", register_path %> </h5>
-        </nav>
+  .reg{
+	  color: #454545;
+	  text-decoration: none;
+  }
 
-      </div>
-  </container>
-</section>
+  .reg:hover{
+	  color: #C05746; 
+  }
+
+  .login-button{
+	border-radius: 25px;
+	width:150px;
+	height:40px;
+	color:#f9f9f9;
+	background:#454545;
+	border: 2px solid #f9f9f9;
+	font-size: 1.2rem;
+  }
+
+  .login-button:hover{
+  	background: #272727;
+  }
+
+  .input-box{
+	  padding: .5rem;
+	  width: 70%;
+	  border: 2px solid #808782;
+	  text-align: left;
+	  font-size: 1rem;
+	  margin-top: .5rem;
+  	}
+
+  .input-box:focus{
+	border: 2px solid #272727;
+	outline: none;
+	}
+
+	@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+</style>
+
+<body class="login-page">
+	<div class="login-box">
+		<h1>Sign In</h1>
+		<div class="login-form">
+			<%= form_tag login_path do %>
+				<div class="label-input">
+				<%= label_tag :email %>
+				<br>
+				<%= text_field_tag :email, nil, required: true, class: "input-box" %>
+				</div>
+				<div class="label-input">
+				<%= label_tag :password %>
+				<br>
+				<%= password_field_tag :password, nil, required: true, class: "input-box" %>
+				</div>
+				<br>
+				<div class="label-input">
+				<%= submit_tag("Log In", :class => "login-button") %>
+				</div>
+				<br>
+			<% end %>
+		<h3 class="register">New? Please <%= link_to "register", register_path, {:class => "reg"} %>. </h3>
+		</div>
+	</div>
+</body>
+
