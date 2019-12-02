@@ -9,6 +9,7 @@
   </head>
 
   <body>
+    <!-- Load in resources -->
     <%= render '/layouts/title' %>
     <% if current_user.nil? %>
       <%= render '/layouts/visitor_nav' %>
@@ -19,9 +20,8 @@
     <!---Flash--->
     <div class="container" id="body-content-no-nav">
       <% flash.each do |flash_type, flash_message| %>
-        <div class="alert alert-<%= flash_type %>" role="alert"><%= flash_message %></div>
+        <!-- <div class="alert alert-<%= flash_type %>" role="alert"><%= flash_message %></div> -->
       <% end %>
-
       <%= yield %>
     </div>
 

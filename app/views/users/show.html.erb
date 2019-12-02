@@ -1,10 +1,62 @@
 <!-- Profile Page -->
-<section class='user-profile'>
-  <section class='profile-info'>
-    <p>Name: <%= @user.name %></p>
-    <p>Location: <%= @user.location %></p>
-    <p>State: <%= @user.state %></p>
-    <p>Email: <%= @user.email %></p>
-    <p>Role: <%= @user.role %></p>
-  </section>
-</section>
+
+<style>
+  .avatar {
+    vertical-align: middle;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .profile-header{
+    background: linear-gradient(-45deg,  #2B303A, #426D7D, #575C55, #4C4C47, #2D2620, #EA8B3C, #E07D2C);
+    animation: gradientBG 15s ease infinite;
+    background-size: 400% 400%;
+  }
+
+  .profile-info{
+    background: #f9f9f9;
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .profile-name{
+    font-size: 2.5rem;
+    color: #fff;
+    padding: 1rem;
+  }
+
+  .profile-item{
+    font-size: 1.8rem;
+    padding: 1rem;
+  }
+
+  @keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+
+</style>
+
+<body>
+<div class='user-profile'>
+    <div class = "profile-header">
+      <img src="/avatar.png" alt="Avatar" class="avatar">
+      <p class = "profile-name"><%= @user.name %></p>
+    </div>
+    <div class = "profile-info">
+      <p class = "profile-item">Location: <%= @user.location %></p>
+      <p class = "profile-item">State: <%= @user.state %></p>
+      <p class = "profile-item">Email: <%= @user.email %></p>
+      <p class = "profile-item">Role: <%= @user.role %></p>
+    </div>
+</div>
+</body>
