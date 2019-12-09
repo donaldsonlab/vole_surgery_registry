@@ -1,6 +1,45 @@
-<section class="about-page">
+
+<style>
+.about-page{
+  background: #808782;
+}
+
+h1{
+  text-align: center;
+  padding-top: 2rem;
+  color: #fff;
+}
+
+p{
+  text-align: center;
+  padding-top: 1rem;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.nav{
+  background: #f9f9f9;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.avatar {
+  vertical-align: middle;
+  border-radius: 50%;
+  border: 1px solid black;
+  float: right;
+  height: 80px;
+  width: 80px;
+}
+</style>
+<div class="about-page">
+
+  <div class = "nav">
+  <%= link_to image_tag("/avatar.png", alt: "avatar", class: "avatar"), profile_path %>
+  </div>
 
   <h1>Welcome to the Vole Surgery Registry</h1>
 
   <p>This is a site to organize and view voles.</p>
-</section>
+</div>

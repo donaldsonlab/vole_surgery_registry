@@ -133,6 +133,10 @@
 		color: rgb(255,255,255);
 		padding: 10px 0 10px 50px;
 	}
+
+	.disabled {
+		pointer-events:none; //This makes it not clickable
+	}
 </style>
 
 <div class = "nav-bar">
@@ -143,7 +147,7 @@
 			<%= link_to 'Dashboard', dashboard_path %>
 			<div>
 				<ul>
-				<li><a href="#">About</a></li>
+				<li><%= link_to 'About', about_path %></li>
 				<li><%= link_to 'Profile', profile_path %></li>
 				<% if current_admin? %>
 				<li><%= link_to 'Researchers', admin_users_path %></li>
@@ -152,11 +156,11 @@
 			</div>
 			</li>
 			<li>
-			<a href="#">Database</a>
+			<a href="#", class = "disabled">Database</a>
 			<div>
 				<ul>
-				<li><%= link_to 'Available Voles', voles_path %></li>
-				<li><a href="#">Coming Soon...</a></li>
+				<li><%= link_to 'Available Voles', voles_path, class: "disabled" %></li>
+				<li><a href="#", class = "disabled">Coming Soon...</a></li>
 				</ul>
 			</div>
 			</li>
