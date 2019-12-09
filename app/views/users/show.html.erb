@@ -1,6 +1,10 @@
 <!-- Profile Page -->
 
 <style>
+  .user-profile {
+    background: #808782;
+  }
+
   .avatar {
     vertical-align: middle;
     border-radius: 50%;
@@ -17,9 +21,9 @@
   }
 
   .profile-info{
-    background: #f9f9f9;
     text-align: center;
     font-size: 2rem;
+    color: #fff;
   }
 
   .profile-name{
@@ -46,8 +50,7 @@
 
 </style>
 
-<body>
-<div class='user-profile'>
+<body class='user-profile'>
     <div class = "profile-header">
       <img src="/avatar.png" alt="Avatar" class="avatar">
       <p class = "profile-name"><%= @user.name %></p>
@@ -58,5 +61,4 @@
       <p class = "profile-item">Email: <%= @user.email %></p>
       <p class = "profile-item">Role: <%= @user.role %></p>
     </div>
-</div>
 </body>

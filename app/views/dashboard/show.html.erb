@@ -25,6 +25,19 @@
 		width: 80px;
 	}
 
+	h1 {
+		text-align: center;
+		padding-top: 2rem;
+		color: #fff;
+	}
+
+	p {
+		text-align: center;
+		padding-top: 1rem;
+		color: #fff;
+		font-size: 1.5rem;
+	}
+
 </style>
 
 <body class="register-page">
@@ -34,7 +47,7 @@
 		</div>
 		<h1>Dashboard</h1>
 		<section class='dashboard-info'>
-		<p>Name: <%= @user.name %></p>
+		<p>Signed in as: <%= @user.name %></p>
 		</section>
 	</div>
 </body>
