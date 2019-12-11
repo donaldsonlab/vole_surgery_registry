@@ -1,7 +1,7 @@
 # Vole Surgery DB
 
 ## Getting Started
-1. Clone or download this repo
+1. Clone or download this repo. Checkout the **chase** branch for the latest release.
 
 2. Uncomment uname and password in /config/database.yml (This step should already have been completed by myself when I pushed to the repo)
 
